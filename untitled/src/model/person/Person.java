@@ -7,15 +7,15 @@ public abstract class Person {
     private String namePerson;
     private String dateOfBirth;
     private String gender;
-    private int identityCard;
-    private int phoneNumber;
+    private String identityCard;
+    private String phoneNumber;
     private String email;
 
     public Person() {
 
     }
 
-    public Person(String codePerson, String namePerson, String dateOfBirth, String gender, int identityCard, int phoneNumber, String email) {
+    public Person(String codePerson, String namePerson, String dateOfBirth, String gender, String identityCard, String phoneNumber, String email) {
         this.codePerson = codePerson;
         this.namePerson = namePerson;
         this.dateOfBirth = dateOfBirth;
@@ -57,19 +57,19 @@ public abstract class Person {
         this.gender = gender;
     }
 
-    public int getIdentityCard() {
+    public String getIdentityCard() {
         return identityCard;
     }
 
-    public void setIdentityCard(int identityCard) {
+    public void setIdentityCard(String identityCard) {
         this.identityCard = identityCard;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -84,7 +84,8 @@ public abstract class Person {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Person person)) return false;
+        if (!(o instanceof Person)) return false;
+        Person person = (Person) o;
         return getCodePerson().equals(person.getCodePerson());
     }
 
@@ -104,4 +105,5 @@ public abstract class Person {
                         ", phoneNumber=" + phoneNumber +
                         ", email='" + email;
     }
+
 }

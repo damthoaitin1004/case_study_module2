@@ -1,10 +1,13 @@
 package controller;
 
+import service.IFacilityService;
+import service.impl.FacilityService;
+
 import java.util.Scanner;
 
 public class FacilityManagement {
     private static Scanner scanner = new Scanner(System.in);
-
+     private static IFacilityService facilityService =new FacilityService();
     public static void FacilityMenu() {
 
         ENDFACI:
@@ -17,14 +20,17 @@ public class FacilityManagement {
                 int enterChose = Integer.parseInt(scanner.nextLine());
                 switch (enterChose) {
                     case 1:
+                        facilityService.displayFacility();
                         break;
                     case 2:
+                        facilityService.addFacility();
                         break;
                     case 3:
+
                         break;
                     case 4:
-                        break ENDFACI;
-                    default:
+                        return;
+                        default:
                         System.out.println("Sai chức năng vui lòng nhập lại");
                 }
             } catch (NumberFormatException n) {

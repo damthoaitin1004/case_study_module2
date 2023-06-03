@@ -8,7 +8,7 @@ public class Employee extends Person {
     public Employee() {
     }
 
-    public Employee(String codePerson, String namePerson, String dateOfBirth, String gender, int identityCard, int phoneNumber, String email, String level, String position, float salary) {
+    public Employee(String codePerson, String namePerson, String dateOfBirth, String gender, String identityCard, String phoneNumber, String email, String level, String position, float salary) {
         super(codePerson, namePerson, dateOfBirth, gender, identityCard, phoneNumber, email);
         this.level = level;
         this.position = position;
@@ -46,4 +46,5 @@ public class Employee extends Person {
                 ", position='" + position + '\'' +
                 ", salary=" + salary;
     }
+
 }

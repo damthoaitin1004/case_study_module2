@@ -74,7 +74,8 @@ public abstract class Facility {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Facility facility)) return false;
+        if (!(o instanceof Facility)) return false;
+        Facility facility = (Facility) o;
         return getServiceCode().equals(facility.getServiceCode());
     }
 
@@ -83,7 +84,6 @@ public abstract class Facility {
         return Objects.hash(getServiceCode());
     }
 
-    @Override
     public String toString() {
         return "serviceCode='" + serviceCode + '\'' +
                 ", nameService='" + nameService + '\'' +
